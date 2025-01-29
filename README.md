@@ -49,6 +49,14 @@ A modern, interactive, and responsive Tic-Tac-Toe game built with React. This ga
    ```bash
    npm test
    ```
+## Game Screenshots
+Light Theme:
+
+![Light Theme Look](screenshots/light-theme-draw.PNG)
+
+Dark theme with score card:
+![Dark Theme Look](screenshots/dark-theme-winner-score.PNG)
+
 
 ## 🤝 Contributing
 
