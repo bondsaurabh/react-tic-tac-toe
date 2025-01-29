@@ -1,0 +1,144 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+}
+
+.game-container {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s, color 0.5s;
+}
+
+.game-container.dark {
+  background: #333;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.turn-indicator {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.player-names input {
+  margin: 5px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.cell:hover:not(.disabled) {
+  background: #e0f7fa;
+  transform: scale(1.1);
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+  background: #e0e0e0;
+}
+
+.cell.winner-cell {
+  background: #ffeb3b;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #ffeb3b;
+  }
+  to {
+    box-shadow: 0 0 20px #ffc107;
+  }
+}
+
+.winner {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00796b;
+  margin-bottom: 10px;
+}
+
+.scoreboard {
+  margin-top: 20px;
+  font-size: 16px;
+  color: inherit;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: #00796b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.reset-button:hover {
+  background: #004d40;
+}
+
+.theme-toggle {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background: #3f51b5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+  background: #303f9f;
+}
+
+@media (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 70px);
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 18px;
+  }
+}
